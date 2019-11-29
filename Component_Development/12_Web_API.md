@@ -1,6 +1,7 @@
-**12. Web API** (https://devdocs.magento.com/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html)
+#12. Web API
+(https://devdocs.magento.com/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html)
 
-General workflow (for custom entity)
+### General workflow (for custom entity)
 1. Create CRUD (Create, Read, Update, Delete). In Magento 2 CRUD includes:
   - Entity Model
   - Entity ResourceModel
@@ -63,7 +64,8 @@ After doing this, request to address `https://<your-website-url>/V1/study/wishli
 
 All requests made on endpoint POST /createWidget will be forwarded to POST V1/widgets
 
-**NOTICE:** Annotations in Repository Interface are VERY important, first of all the `@return` value. Without correct annotations Magento API Processor (`Magento\Framework\Webapi\ServiceInputProcessor`) will be unable to convert JSON array from your request body (in POST and PUT requests) into corresponding object. General rules for annotations in Repository Interface:
+## NOTICE:
+Annotations in Repository Interface are VERY important, first of all the `@return` value. Without correct annotations Magento API Processor (`Magento\Framework\Webapi\ServiceInputProcessor`) will be unable to convert JSON array from your request body (in POST and PUT requests) into corresponding object and and vice versa. General rules for annotations in Repository Interface:
 - `@return` and `@param` instruction must contain FULL CLASS NAME. Class aliases won't work.
 - `getById()`, `save()` and `update()` methods return Entity.
 - `deleteById()` method returns bool. 
