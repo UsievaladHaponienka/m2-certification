@@ -27,7 +27,7 @@ Observers are "connected" to events in events.xml:
   <event name="my_module_event_before">
       <observer name="myObserverName" instance="MyCompany\MyModule\Observer\MyObserver" disabled="false" shared="true"/>
   </event>
- ```
+```
 
 Events.xml file from the whole magento are merged according to module load order. That means that it is possible to disable existing Observer by adding disabled="true" attribute:
 ```xml

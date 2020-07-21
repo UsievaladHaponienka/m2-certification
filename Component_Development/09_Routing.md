@@ -1,4 +1,4 @@
-**9. Routing** (https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html)
+ **9. Routing** (https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html)
 
 In general, routing is the act of providing data from url request to corresponding class for processing.
 

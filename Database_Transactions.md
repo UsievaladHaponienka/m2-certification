@@ -17,12 +17,12 @@ Magento 2 example transaction flow (saving product entity):
 03. ----Begin transaction (0 level).
 04. ------Before product save events.
 05. ------Creating new product or updating existing one.
-06. ------After product save events.
-07. --------One of ofter product save events is saving of another entity - CatalogInventory Stock -> save().
+06. -------After product save events.
+07. --------One of after product save events is saving of another entity - CatalogInventory Stock -> save().
 08. ----------Catalog inventory stock resource -> save().
 09. ------------Begin transaction (1 level).
 10. --------------Before stock save events.
-11. --------------Creating/Updating stock entity.
+11. ---------------Creating/Updating stock entity.
 12. --------------After product save events.
 13. ------------Commit of **1st level**. Callbacks are not executed.
 14. ----Commit of **0 level**.

@@ -30,7 +30,7 @@ Usefull cli commands:
   - `--convert-old-scripts=1` - converts install or upgrade scripts into declarative schema
 All released modules that used Upgrade scripts must implement `Magento\Framework\Setup\Patch\PatchVersionInterface` and `getVersion()` method for backward compatibility. This method allows to skip changes made in previous version by old scripts. 
 
-  - `--dry-run=1` - instead of upgrading database, Magento logs SQL statements in var/log/dry-run-installation.log. This allows you to check result of executing this commands withous actually exeting them.
+  - `--dry-run=1` - instead of upgrading database, Magento logs SQL statements in var/log/dry-run-installation.log. This allows you to check result of executing this commands withous actually executing them.
   - `--safe-mode=1` - creates a data dump for data that can be lost during installation/upgrade.
   - `--data-restore=1` - Only with `setup:upgrade`, rollback.
 
@@ -143,7 +143,7 @@ When module is disabled, its database schema is not visible for upgrade/install.
 
 **Data and schema patches**
 
-Data patches are located in `<Vendor>/<Module_Name>/Setup/Patch/Data/<Patch_Name>.php` and must implement `\Magento\Framework\Setup\Patch\DataPatchInterface`. Patches are applied only once. List of applied patches is stored in `patch_list` table. Patches are applied by `setup:upgrade` command. Ti make patch revertable it must implement `Magento\Framework\Setup\Patch\PatchRevertableInterface`.
+Data patches are located in `<Vendor>/<Module_Name>/Setup/Patch/Data/<Patch_Name>.php` and must implement `\Magento\Framework\Setup\Patch\DataPatchInterface`. Patches are applied only once. List of applied patches is stored in `patch_list` table. Patches are applied by `setup:upgrade` command. To make patch revertable it must implement `Magento\Framework\Setup\Patch\PatchRevertableInterface`.
 
 Patch sequence is handled through dependency-based approach. Dependencies are defined in `getDependencies()` method:
 ```php
@@ -235,7 +235,7 @@ Data patch full example:
     }
 ```
 
-Exaple of `apply()` method:
+Example of `apply()` method:
 ```php
  public function apply()
         {

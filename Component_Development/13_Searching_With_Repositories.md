@@ -1,7 +1,7 @@
 # 12. Searching with repositories 
 (https://devdocs.magento.com/guides/v2.3/extension-dev-guide/searching-with-repositories.html)
 
-Repository must be stateless after instantiation. In means that that every method call should not rely on previous call and shoyul not affect further calls. If state is required for repository, *registry* pattern is required:
+Repository must be stateless after instantiation. In means that that every method call should not rely on previous call and should not affect further calls. If state is required for repository, *registry* pattern is required:
 
 ```php
 // Magento\Customer\Model\ResourceModel\CustomerRepository::__construct() fragment
